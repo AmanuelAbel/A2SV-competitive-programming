@@ -23,6 +23,7 @@ class Solution:
                     choice1[1] += nums[start]
                     return choice1
         player1, player2 = winner(0, len(nums) -1, True)
+        print(player1)
         if player1 >= player2:
             return True
         else:
