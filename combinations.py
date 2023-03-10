@@ -5,10 +5,11 @@ class Solution:
             return 
         if i > n:
             return 
-        subs.append(i)
-        self.helper(i+1,n,subs,k,comb)
-        subs.pop()
-        self.helper(i+1,n,subs,k,comb)
+        for j in range(i,n+1):
+            subs.append(j)
+            self.helper(j+1,n,subs,k,comb)
+            subs.pop()
+            
     def combine(self, n: int, k: int) -> List[List[int]]:
         comb = []
         subs = []
