@@ -1,4 +1,11 @@
 class Solution:
     def isPowerOfThree(self, n: int) -> bool:
-        x = 3**21
-        return n > 0 and x%n == 0
+        if n <= 0:
+            return False
+        i = 0
+        x = 1
+        while x <= n:
+            if x == n:
+                return True
+            x = 3**i
+            i += 1
