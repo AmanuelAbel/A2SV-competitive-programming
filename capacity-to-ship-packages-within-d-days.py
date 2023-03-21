@@ -1,10 +1,5 @@
 class Solution(object):
     def shipWithinDays(self, weights, days):
-        """
-        :type weights: List[int]
-        :type days: int
-        :rtype: int
-        """
         def CalculateCapacity(capacity): 
             count = 1
             max = capacity
