@@ -3,22 +3,18 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        length = len(nums)
-        while k > length:
-            k -= length
-        l = 0
-        r = len(nums) - k 
-        numbers = []
-        
-        
-        if len(nums) > 1 and k < length:
-            for i in range(r,len(nums)):
-                numbers.append(nums[i])
-                
-            for i in range(l,r):
-                numbers.append(nums[i])
-                
-            nums.clear()
-            for i in range(length):
-             if i <= length:
-                nums.append(numbers[i])
+        k = k % len(nums)
+        l, r = 0, len(nums) - 1
+        while l < r:
+            nums[l], nums[r] = nums[r], nums[l]
+            l, r = l + 1, r - 1
+            
+        l, r = 0, k - 1
+        while l < r:
+            nums[l], nums[r] = nums[r], nums[l]
+            l, r = l + 1, r - 1
+            
+        l, r = k, len(nums) - 1
+        while l < r:
+            nums[l], nums[r] = nums[r], nums[l]
+            l, r = l + 1, r - 1
