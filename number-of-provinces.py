@@ -7,12 +7,15 @@ class Solution:
                 if i != j and isConnected[i][j] == 1:
                     graph[i+1].append(j+1)
         visited = set()
+        
         def dfs(node):
-            nonlocal visited
-            visited.add(node)
-            for nbr in graph[node]:
-                if nbr not in visited:
-                    dfs(nbr)
+            stack = [node]
+            while stack:
+                top = stack.pop()
+                visited.add(top)
+                for nbr in graph[top]:
+                    if nbr not in visited:
+                        stack.append(nbr)
         for node in range(1,len(isConnected)+1):
             if node not in visited:
                 dfs(node)
