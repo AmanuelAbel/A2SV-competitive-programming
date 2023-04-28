@@ -4,9 +4,6 @@ class Solution:
             return -1
         queue = [(0,0)]
         path = 0
-        z = len(grid) - 1
-        if grid[z][z-1] == grid[z-1][z-1] == grid[z-1][z] == 1:
-            return -1
         while queue:
             for i in range(len(queue)):
                 (r,c) = queue.pop(0)
