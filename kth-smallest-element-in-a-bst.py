@@ -10,8 +10,11 @@ class Solution:
         def traverse(root):
             if not root:
                 return
+            
             traverse(root.left)
+            if len(ans) == k:
+                return 
             ans.append(root.val)
             traverse(root.right)
         traverse(root)
-        return ans[k-1]
+        return ans[-1]
